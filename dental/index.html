@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- sidebar -->
+      <div class="sidebar">
+        <div class="sidebar_top_items">
+          <div class="sidebar_child logo">
+            <img src="/logo.svg" alt="" class="logo" />
+          </div>
+          <div class="sidebar_child">
+            <div class="sidebar_icon"><i class="fa-solid fa-calendar-days bg_onClick"></i></div>
+            <p>Calender</p>
+          </div>
+          <div class="sidebar_child">
+            <div class="sidebar_icon bg_brand"><i class="fa-solid fa-users bg_onClick"></i></div>
+            <p>Patients</p>
+          </div>
+          <div class="sidebar_child">
+            <div class="sidebar_icon"><i class="fa-solid fa-chart-area bg_onClick"></i></div>
+            <p>Reports</p>
+          </div>
+          <div class="sidebar_child">
+            <div class="sidebar_icon"><i class="fa-solid fa-gear bg_onClick"></i></div>
+            <p>Settings</p>
+          </div>
+        </div>
+        <div class="sidebar_bottom_items">
+          <div class="sidebar_child">
+            <img src="/us.svg" alt="" class="flag bg_onClick" />
+            <p>Reports</p>
+          </div>
+          <div class="sidebar_child">
+            <div class="account_circle">JD</div>
+            <p>Profile</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-full">
+        <!-- navbar -->
+        <div class="navbar">
+          <div class="account flex_row_start">
+            <div class="account_circle">TP</div>
+            <p class="account_name">Test P.</p>
+          </div>
+          <div class="nav_menus flex_row_start">
+            <div class="nav_menu flex_center active_nav_menu">
+              <p>History</p>
+              <span>1</span>
+            </div>
+            <div class="nav_menu flex_center">
+              <p>Invocies</p>
+              <span>0</span>
+            </div>
+            <div class="nav_menu flex_center">
+              <p>Estimates</p>
+              <span>0</span>
+            </div>
+            <div class="nav_menu flex_center">
+              <p>Questionnaire</p>
+            </div>
+            <div class="nav_menu flex_center">
+              <p>Task</p>
+              <span>2</span>
+            </div>
+            <div class="nav_menu flex_center">
+              <p>Documents</p>
+              <span>1</span>
+            </div>
+            <div class="nav_menu flex_center">
+              <p>Storage</p>
+              <span>2</span>
+            </div>
+          </div>
+        </div>
+        <!-- content -->
+        <div class="container">
+          <!--  first column in container -->
+          <div class="first_column">
+            <div class="w-full accounts">
+              <div class="accounts_child">
+                <p>$0.00</p>
+                <p>Balance</p>
+              </div>
+              <div class="accounts_child">
+                <p>$0.00</p>
+                <p>Debts</p>
+              </div>
+            </div>
+            <div class="w-full first_column_items">
+              <div class = 'profile'>
+                <div class="first_column_item semibold">
+                  <p>Profile</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="general submenu"><p>General</p></div>
+                <div class="submenu">
+                  <div>
+                    <p>Full name <span class="star">*</span></p>
+                    <p>Test P</p>
+                  </div>
+                  <div class="mf"><span>M</span> <span>F</span></div>
+                </div>
+                <div class="submenu">
+                  <div>
+                    <p>Card No <span class="star">*</span></p>
+                    <p>9</p>
+                  </div>
+                </div>
+                <div class="submenu">
+                  <div>
+                    <p>Phone <span class="star">*</span></p>
+                    <p>+34535436433</p>
+                    <i class="fa-solid fa-circle-plus absolute_icon"></i>
+                  </div>
+                </div>
+                <div class="submenu">
+                  <div>
+                    <p>Birthday</p>
+                    <p></p>
+                    <i class="fa-regular fa-calendar-plus absolute_icon"></i>
+                  </div>
+                </div>
+                <div class="submenu">
+                  <div>
+                    <p>Email</p>
+                  </div>
+                </div>
+              </div>
+            
+      
+              <div class = 'group'>
+                <div class="first_column_item semibold">
+                  <div>
+                    <p>Group</p>
+                    <p class="gray_text">Foreingers,VIP</p>
+                  </div>
+                  <i class="fa-solid fa-angle-down"></i>
+              
+                </div>
+                <div class="general hidden submenu"><p>Empty</p></div>
+              
+              </div>
+              <div class = 'discounts'>
+                <div class="first_column_item semibold">
+                  <div>
+                    <p>Discounts</p>
+                    <p class="gray_text">15.00%</p>
+                  </div>
+                  <i class="fa-solid fa-angle-down"></i>
+              
+                </div>
+                <div class="general hidden submenu"><p>Empty</p></div>
+              
+              </div>
+              <div class = 'family'>
+                <div class="first_column_item semibold">
+                  <div>
+                    <p>Family</p>
+                    <p class="gray_text">Balance $0.00</p>
+                  </div>
+                  <i class="fa-solid fa-angle-down"></i>
+              
+                </div>
+                <div class="general hidden submenu"><p>Empty</p></div>
+              
+              </div>
+        
+              <div class = 'insurance'>
+                <div class="first_column_item semibold">
+                  <div>
+                    <p>Insurance</p>
+                    <p class="gray_text">No Insurance</p>
+                  </div>
+                  <i class="fa-solid fa-angle-down"></i>
+              
+                </div>
+                <div class="general hidden submenu"><p>Empty</p></div>
+              
+              </div>
+              <div class="show_more">
+                <p>More</p>
+                <span><i class="fa-solid fa-angle-down"></i></span>
+              </div>
+            </div>
+          </div>
+          <!--  second column in container -->
+          <div class="second_column">
+            <div class="newAppo"><p>New Appo...</p></div>
+            <div class="second_column_serial">
+              <div class="serial_child active active_onClick">
+                <span>A</span><span>1</span>
+              </div>
+              <div class="serial_child active_onClick"><span>C</span><span>D</span></div>
+            </div>
+            <div class="second_column_date">
+              <p>Apr13,20221:30 AM</p>
+              <i class="fa-solid fa-user icon"></i> <span>John D.</span>
+            </div>
+          </div>
+          <!-- last column in container -->
+          <div class="third_column">
+            <div class="row_one_and_two">
+              <div class="third_column_row1">
+                <span class="position_pill">1</span>
+                <div class="active active_onClick"><p>Dental chart</p></div>
+                <div class='active_onClick'><p>Clinical Notes</p></div>
+                <div class='active_onClick'><p>Perio Chart</p></div>
+              </div>
+              <div class="line"></div>
+              <div class="third_column_row2">
+                <span class="position_pill">3</span>
+                <div class="active active_onClick">
+                  <p>Diagonostic</p>
+                </div>
+                <div class='active_onClick'>
+                  <p>Prophy/Aesthetic</p>
+                </div class='active_onClick'>
+                <div class='active_onClick'>
+                  <p>Therapy</p>
+                </div>
+                <div class='active_onClick'>
+                  <p>Prosthodontics</p>
+                </div>
+                <div class='active_onClick'>
+                  <p>Surgery</p>
+                </div>
+                <div class='active_onClick'>
+                  <p>Ortho</p>
+                </div>
+              </div>
+            </div>
+            <div class="third_column_row34">
+              <div class="third_column_rowx">
+                <div class="position_pill">2</div>
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_dark_bg"></i>
+                  <p>Missing</p>
+                </div>
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_dark_bg"></i>
+                  <p>Impacted</p>
+                </div>
+
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_dark_bg"></i>
+                  <p>Caries</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_dark_bg"></i>
+                  <p>Non-Carious</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_dark_bg"></i>
+                  <p>Pulplts</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_dark_bg"></i>
+                  <p>Abscess</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_dark_bg"></i>
+                  <p>Gingiva</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+              </div>
+              <div class="third_column_rowy">
+                <div class="position_pill">4</div>
+                <div class="data pointer">
+                  <i class="fa-solid fa-circle-plus icon"></i>
+                  <p>All Categories</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+              </div>
+            </div>
+            <!-- tooth image -->
+            <div class="third_column_row5">
+              <img src="/tooth.jpeg" class="tooth_img" alt="" />
+            </div>
+            <!-- data status -->
+            <div class="third_column_row6">
+              <div class="item flex_center active active_onClick">
+                <p>All Procedures</p>
+                <span>0</span>
+              </div>
+              <div class="item flex_center active_onClick">
+                <p>Existing</p>
+                <span>0</span>
+              </div>
+              <div class="item flex_center active_onClick">
+                <p>Planned</p>
+                <span class="bg_red">0</span>
+              </div>
+              <div class="item flex_center active_onClick">
+                <p>Completed</p>
+                <span class="bg_green">0</span>
+              </div>
+              <div class="item flex_center active_onClick">
+                <p>Diagnoses</p>
+                <span>0</span>
+              </div>
+            </div>
+            <!-- data table -->
+            <div class="third_column_table">
+              <table class="third_column_table_header">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Code</th>
+                    <th>Teeth</th>
+                    <th>Procedure</th>
+                    <th>Qty</th>
+                    <th>Fee</th>
+                    <th></th>
+                  </tr>
+                </thead>
+              </table>
+              <div class="no_data">No Data</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/0257e3c208.js"
+    crossorigin="anonymous"
+  
+  ></script>
+  <script>
+    // onclick active nav menu
+    const menus = document.querySelectorAll('.nav_menu');
+
+    // Add click event listeners to each tab
+    menus.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        menus.forEach((t) => t.classList.remove('active_nav_menu'));
+        tab.classList.add('active_nav_menu');
+
+      });
+    });
+// active button from container
+const tabs = document.querySelectorAll('.active_onClick');
+
+tabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => {
+    const parent = tab.parentNode;
+
+    // Remove the 'active' class from siblings with the same immediate parent
+    Array.from(parent.children).forEach((t) => {
+      if (t !== tab) {
+        t.classList.remove('active');
+      }
+    });
+
+    tab.classList.add('active');
+  });
+});
+    // changing background on clik sidebar icon
+    const sidebarMenus = document.querySelectorAll('.sidebar_icon');
+sidebarMenus.forEach((tab, index) => {
+  tab.addEventListener('click', () => {
+    sidebarMenus.forEach((t) => t.classList.remove('bg_brand'));
+
+    // Add the 'bg_brand' class to the clicked tab
+    tab.classList.add('bg_brand');
+
+  });
+});
+
+// colupse  dropdown
+ var firstColumnItems = document.querySelectorAll('.first_column_item');
+firstColumnItems.forEach(function(item) {
+  item.addEventListener('click', function() {
+    var submenus = item.parentNode.querySelectorAll('.submenu');
+    submenus.forEach(function(submenu) {
+      submenu.classList.toggle('hidden');
+    });
+  });
+});
+
+
+  </script>
+</html>

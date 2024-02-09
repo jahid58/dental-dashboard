@@ -22,11 +22,11 @@
           <div class="sidebar_child logo">
             <img src="/logo.svg" alt="" class="logo" />
           </div>
-          <div class="sidebar_child">
+          <div class="sidebar_child calender">
             <div class="sidebar_icon"><i class="fa-solid fa-calendar-days bg_onClick"></i></div>
             <p>Calender</p>
           </div>
-          <div class="sidebar_child">
+          <div class="sidebar_child patients">
             <div class="sidebar_icon bg_brand"><i class="fa-solid fa-users bg_onClick"></i></div>
             <p>Patients</p>
           </div>
@@ -50,7 +50,7 @@
           </div>
         </div>
       </div>
-      <div class="w-full">
+      <diiv class="w-full">
         <!-- navbar -->
         <div class="navbar">
           <div class="account flex_row_start">
@@ -200,7 +200,7 @@
           </div>
           <!--  second column in container -->
           <div class="second_column">
-            <div class="newAppo"><p>New Appo...</p></div>
+            <div class="newAppo pointer" id="openDiagnosis" ><p>New Appo...</p></div>
             <div class="second_column_serial">
               <div class="serial_child active active_onClick">
                 <span>A</span><span>1</span>
@@ -217,34 +217,43 @@
             <div class="row_one_and_two">
               <div class="third_column_row1">
                 <span class="position_pill">1</span>
-                <div class="active active_onClick"><p>Dental chart</p></div>
+                <div class="active active_onClick" onclick="toggleChild('child_of_diagnoses')"><p>Dental chart</p></div>
                 <div class='active_onClick'><p>Clinical Notes</p></div>
                 <div class='active_onClick'><p>Perio Chart</p></div>
               </div>
               <div class="line"></div>
               <div class="third_column_row2">
                 <span class="position_pill">3</span>
-                <div class="active active_onClick">
-                  <p>Diagonostic</p>
-                </div>
-                <div class='active_onClick'>
+
+    <div class="active active_onClick" onclick="toggleChild('child_of_diagnoses'); hideOtherChildren('child_of_prophy', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_ortho')">
+      <p>Diagnostic</p>
+    </div>
+
+    <div class="active_onClick" onclick="toggleChild('child_of_prophy'); hideOtherChildren('child_of_diagnoses', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_ortho')">
                   <p>Prophy/Aesthetic</p>
-                </div class='active_onClick'>
-                <div class='active_onClick'>
+                </div>
+                  <div class="active_onClick" onclick="toggleChild('child_of_therapy'); hideOtherChildren('child_of_diagnoses', 'child_of_prophy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_ortho')">
+
                   <p>Therapy</p>
                 </div>
-                <div class='active_onClick'>
+                  <div class="active_onClick" onclick="toggleChild('child_of_prosthodontics'); hideOtherChildren('child_of_diagnoses', 'child_of_therapy', 'child_of_prophy', 'child_of_surgery', 'child_of_ortho')">
+
                   <p>Prosthodontics</p>
                 </div>
-                <div class='active_onClick'>
+                  <div class="active_onClick" onclick="toggleChild('child_of_surgery'); hideOtherChildren('child_of_diagnoses', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_prophy', 'child_of_ortho')">
+
                   <p>Surgery</p>
                 </div>
-                <div class='active_onClick'>
+                  <div class="active_onClick" onclick="toggleChild('child_of_ortho'); hideOtherChildren('child_of_diagnoses', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_prophy')">
+
                   <p>Ortho</p>
                 </div>
               </div>
             </div>
-            <div class="third_column_row34">
+
+
+            <div class="child_of_diagnoses child-content default">
+          <div class="third_column_row34">
               <div class="third_column_rowx">
                 <div class="position_pill">2</div>
                 <div class="data">
@@ -282,7 +291,7 @@
                   <i class="fa-solid fa-angle-down"></i>
                 </div>
               </div>
-              <div class="third_column_rowy">
+              <div class="third_column_rowy" >
                 <div class="position_pill">4</div>
                 <div class="data pointer">
                   <i class="fa-solid fa-circle-plus icon"></i>
@@ -291,10 +300,73 @@
                 </div>
               </div>
             </div>
-            <!-- tooth image -->
+   <!-- tooth image -->
             <div class="third_column_row5">
               <img src="/tooth.jpeg" class="tooth_img" alt="" />
             </div>
+            </div>
+               <div class="child_of_prophy child-content">
+ <div class="third_column_row34">
+              <div class="third_column_rowx">
+                <div class="position_pill">2</div>
+                <div class="data ">
+                  <i class="fa-solid fa-tooth icon_red_bg"></i>
+                  <p>Planned</p>
+                </div>
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_red_bg"></i>
+                  <p>Cleanned</p>
+                </div>
+
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_red_bg"></i>
+                  <p>Fluoride</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_red_bg"></i>
+                  <p>Sealant</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_red_bg"></i>
+                  <p>whitening</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+               
+              </div>
+              <div class="third_column_rowy" id="openProcedures">
+                <div class="position_pill">4</div>
+                <div class="data pointer">
+                  <i class="fa-solid fa-circle-plus icon"></i>
+                  <p>All Categories</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+              </div>
+            </div>
+               <!-- tooth image -->
+            <div class="third_column_row5">
+              <img src="/pophy.jpg" class="tooth_img" alt="" />
+            </div>
+            </div>
+                 <div class="child_of_therapy child-content">
+ <P class="empty">Empty</P>
+          
+            </div>
+                    <div class="child_of_prosthodontics child-content">
+ <P class="empty">Empty</P>
+          
+            </div>
+                                <div class="child_of_surgery child-content">
+ <P class="empty">Empty</P>
+          
+            </div>
+                                            <div class="child_of_ortho child-content">
+ <P class="empty">Empty</P>
+          
+            </div>
+           
+         
             <!-- data status -->
             <div class="third_column_row6">
               <div class="item flex_center active active_onClick">
@@ -340,64 +412,151 @@
         </div>
       </div>
     </div>
+
+    <!-- modals -->
+<!-- add diagnosses modal -->
+    <div class = 'w-full  modal' id="add_diagnoses">
+      <div class="flex justify-between items-center border-b-[.5px] p-2">
+         <h3 class="title  border-gray-300">Add Diagnoses</h3> 
+         <icon class="fa fa-close text-xl pointer" id="closeModal"/>
+      </div>
+
+   <div class="modal_container">
+  <div class="flex justify-between w-full border-b-[.5px] border-gray-300 py-2">
+ <div class="flex_row_start shadow w-max h-max">
+              <div class=" active active_onClick px-4 py-2">
+                <p>ICD-10 codes</p> 
+              </div>
+              <div class=" px-4 py-2 active_onClick"><p>Custom codes</p></div>
+            </div>
+               <div class="flex_row_start shadow w-max rounded-md">
+              <div class=" px-4 py-2">
+               <icon class="fa fa-search" />
+              </div> 
+               <input class="p-2" type="text" placeholder="Search">
+            
+            </div>
+       
+   </div> 
+        <form action="">
+             
+              <div class="py-2 border-b-[.5px] shadow-b-md">
+               <input class="border-[.5px] border-gray-300 p-1 w-max h-max" type="datetime-local" name="" id="">
+              </div>
+              <div class="scroll_container">
+                <div class = 'flex_row_start'>
+                  <div class="border-[1px] border-gray-300 w-10 p-2"><input type="checkbox" name="" id="" checked></div>
+                  <div class="border-[1px] border-gray-300 w-24 p-2" ><p>Code</p></div>
+                  <div class="border-[1px] border-gray-300 w-full p-2">Name</div>
+                </div> <div class = 'flex_row_start diagnoses_code'>
+                  <div class="border-[1px] border-gray-300 w-10 p-2"><input type="checkbox" name="" id="" ></div>
+                  <div class="border-[1px] border-gray-300 w-24 p-2" ><p>K00.0</p></div>
+                  <div class="border-[1px] border-gray-300 w-full p-2">Anondontia</div>
+                </div> <div class = 'flex_row_start diagnoses_code'>
+                  <div class="border-[1px] border-gray-300 w-10 p-2"><input type="checkbox" name="" id="" ></div>
+                  <div class="border-[1px] border-gray-300 w-24 p-2" ><p>K00.1</p></div>
+                  <div class="border-[1px] border-gray-300 w-full p-2">Supernumerary teeth</div>
+                </div> <div class = 'flex_row_start diagnoses_code'>
+                  <div class="border-[1px] border-gray-300 w-10 p-2"><input type="checkbox" name="" id="" ></div>
+                  <div class="border-[1px] border-gray-300 w-24 p-2" ><p>K00.2</p></div>
+                  <div class="border-[1px] border-gray-300 w-full p-2">Abnormalities of tooth size and form</div>
+                </div>
+              
+              </div>
+              <div class=" py-4">
+
+                <input type="submit" class="button w-full" value="Create Diagnosis - 2">
+              </div>
+
+            </form>
+   </div>
+ 
+
+   </div>
+<!-- add procedures -->
+<div class = 'w-full  modal' id="add_procedures">
+      <div class="flex justify-between items-center border-b-[.5px] p-2">
+         <h3 class="title  border-gray-300">Add Procedures/Therapy/Restoration</h3> 
+         <icon class="fa fa-close text-xl pointer" id="closeProcedures"/>
+      </div>
+
+   <div class="modal_container">
+  <div class="flex justify-between w-full border-b-[.5px] border-gray-300 py-2">
+ <div class="flex_row_start shadow w-max h-max">
+              <div class=" active active_onClick px-4 py-2">
+                <p>Procedures &nbsp;  &nbsp; <span>96</span> </p>
+              </div> 
+              <div class=" px-4 py-2 active_onClick"> <p>presets &nbsp;  &nbsp;<span> 0 </span></p></div>
+            </div>
+               <div class="flex_row_start shadow w-max rounded-md">
+              <div class=" px-4 py-2">
+               <icon class="fa fa-search" />
+              </div> 
+               <input class="p-2" type="text" placeholder="Search">
+            </div>
+       
+   </div> 
+        <form action="">
+              <div class="py-2 border-b-[.5px] shadow-b-md flex_row_start space-x-2">
+                <select class="border-[.5px] border-gray-300">
+                  <option value="Permanent"><p>Permanent &nbsp; <span> <i class="fa-solid fa-angle-down"></i></span></p></option>
+                </select>  <select class="border-[.5px] border-gray-300">
+                  <option value="4/13/2022, 1;30 AM"><p>4/13/2022, 1;30 AM &nbsp; <span> <i class="fa-solid fa-angle-down"></i></span></p></option>
+                </select>  <select class="border-[.5px] border-gray-300">
+                  <option value="Assingned to"><p>Assingned to &nbsp; <span> <i class="fa-solid fa-angle-down"></i></span></p></option>
+                </select>  <select class="border-[.5px] border-gray-300">
+                  <option value="Default fee"><p>Default fee &nbsp; <span> <i class="fa-solid fa-angle-down"></i></span></p></option>
+                </select>
+               <input class="border-[.5px] border-gray-300 p-1  w-max h-max" type="datetime-local" name="" id="">
+              </div>
+              <div class="scroll_container">
+                <div class = 'flex_row_start'>
+                  <div class="border-[1px] border-gray-300 w-10 p-2"><input type="checkbox" name="" id="" checked></div>
+                  <div class="border-[1px] border-gray-300 w-24 p-2" ><p>Code</p></div>
+                  <div class="border-[1px] border-gray-300 w-full p-2">Name</div>
+                  <div class="border-[1px] border-gray-300 w-full p-2 w-[100px]">Subtotal</div>
+                </div> <div class = 'flex_row_start diagnoses_code'>
+                  <div class="border-[1px] border-gray-300 w-10 p-2"><input type="checkbox" name="" id="" ></div>
+                  <div class="border-[1px] border-gray-300 w-24 p-2" ><p>D0140</p></div>
+                  <div class="border-[1px] border-gray-300 w-full p-2">Limited Oral Evaluation - Problem Focuesed</div>
+                     <div class="border-[1px] border-gray-300 w-full p-2 w-[100px]">$10.00</div>
+                </div> <div class = 'flex_row_start diagnoses_code'>
+                  <div class="border-[1px] border-gray-300 w-10 p-2"><input type="checkbox" name="" id="" ></div>
+                  <div class="border-[1px] border-gray-300 w-24 p-2" ><p>D0150</p></div>
+                  <div class="border-[1px] border-gray-300 w-full p-2">comprehensive Oral Eva luation - New or Established Patient </div>
+                  <div class="border-[1px] border-gray-300 w-full p-2 w-[100px]">$10.00</div>
+
+                </div> <div class = 'flex_row_start diagnoses_code'>
+                  <div class="border-[1px] border-gray-300 w-10 p-2"><input type="checkbox" name="" id="" ></div>
+                  <div class="border-[1px] border-gray-300 w-24 p-2" ><p>D0160</p></div>
+                  <div class="border-[1px] border-gray-300 w-full p-2">Detailed and Extensive Oral Evaluatoin - Problem Focused By Report</div>
+                     <div class="border-[1px] border-gray-300 w-full p-2 w-[100px]">$10.00</div>
+                </div>
+              
+              </div>
+              <div class=" py-4">
+
+                <input type="submit" class="button w-full" value="Create Diagnosis - 2">
+              </div>
+
+            </form>
+   </div>
+
+   </div>
+    </div>
   </body>
+  <!-- font awesome -->
   <script
     src="https://kit.fontawesome.com/0257e3c208.js"
     crossorigin="anonymous"
+  ></script>
+  <!-- tailwind css -->
+   <script src="https://cdn.tailwindcss.com"></script>
+   <!-- js file for functionality -->
+   <script
+    src="index.js"
+    crossorigin="anonymous"
   
   ></script>
-  <script>
-    // onclick active nav menu
-    const menus = document.querySelectorAll('.nav_menu');
 
-    // Add click event listeners to each tab
-    menus.forEach((tab, index) => {
-      tab.addEventListener('click', () => {
-        menus.forEach((t) => t.classList.remove('active_nav_menu'));
-        tab.classList.add('active_nav_menu');
-
-      });
-    });
-// active button from container
-const tabs = document.querySelectorAll('.active_onClick');
-
-tabs.forEach((tab, index) => {
-  tab.addEventListener('click', () => {
-    const parent = tab.parentNode;
-
-    // Remove the 'active' class from siblings with the same immediate parent
-    Array.from(parent.children).forEach((t) => {
-      if (t !== tab) {
-        t.classList.remove('active');
-      }
-    });
-
-    tab.classList.add('active');
-  });
-});
-    // changing background on clik sidebar icon
-    const sidebarMenus = document.querySelectorAll('.sidebar_icon');
-sidebarMenus.forEach((tab, index) => {
-  tab.addEventListener('click', () => {
-    sidebarMenus.forEach((t) => t.classList.remove('bg_brand'));
-
-    // Add the 'bg_brand' class to the clicked tab
-    tab.classList.add('bg_brand');
-
-  });
-});
-
-// colupse  dropdown
- var firstColumnItems = document.querySelectorAll('.first_column_item');
-firstColumnItems.forEach(function(item) {
-  item.addEventListener('click', function() {
-    var submenus = item.parentNode.querySelectorAll('.submenu');
-    submenus.forEach(function(submenu) {
-      submenu.classList.toggle('hidden');
-    });
-  });
-});
-
-
-  </script>
 </html>

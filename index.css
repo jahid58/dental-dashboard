@@ -11,8 +11,17 @@ body {
   font-size: 12px;
   background-color: var(--secondary-color);
 }
+input[type="text"],
+input[type="textarea"] {
+  border: none;
+  outline: none;
+}
+
 p {
   margin: 0;
+}
+.text_brand {
+  color: var(--primary-color);
 }
 /* global classes */
 .w-full {
@@ -29,6 +38,11 @@ p {
 }
 .pointer {
   cursor: pointer;
+}
+.btn {
+  border: 0.5px solid gray;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 .gray_text {
   color: rgb(182, 180, 180);
@@ -306,13 +320,13 @@ p {
 }
 /* second column section */
 .second_column {
-  width: 170px;
+  width: 200px;
   background-color: white;
   margin-right: 10px;
 }
+
 .newAppo {
   padding: 10px;
-  margin: 10px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -471,6 +485,7 @@ i {
   font-size: 10px;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
+
 /* data table */
 table {
   background-color: white;
@@ -505,6 +520,41 @@ table {
 .third_column_table_header td:not(:first-child):not(:nth-child(5)) {
   width: 12.5%; /* Divide remaining columns equally (25% / 2) */
 }
+/* data table */
+table {
+  background-color: white;
+  overflow: hidden;
+}
+.invoice_column_table_header {
+  width: 100%;
+  border-collapse: collapse;
+  color: rgb(173, 173, 173);
+  font-weight: 400 !important;
+}
+
+.invoice_column_table_header th,
+.invoice_column_table_header td {
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.invoice_column_table_header th:first-child,
+.invoice_column_table_header td:first-child {
+  width: 10%; /* Set first column width to 25% */
+}
+
+.invoice_column_table_header th:nth-child(3),
+.invoice_column_table_header td:nth-child(3) {
+  width: 40%; /* Set Procedure column width to 50% */
+}
+
+.invoice_column_table_header th:not(:first-child):not(:nth-child(2)),
+.invoice_column_table_header td:not(:first-child):not(:nth-child(2)) {
+  width: 5%; /* Divide remaining columns equally (25% / 2) */
+}
 .no_data {
   color: rgb(173, 173, 173);
   background-color: white;
@@ -514,6 +564,8 @@ table {
 }
 .modal {
   background-color: white;
+  padding: 10px;
+  display: none;
   max-width: 70vw;
   height: max-content;
   color: black;
@@ -573,8 +625,9 @@ table {
 }
 .empty {
   color: gray;
+  display: block;
   width: 100%;
-  height: 100%;
+  height: 200px;
   margin-top: 100px;
   text-align: center;
   font-size: 1.5rem;
@@ -595,4 +648,7 @@ table {
 }
 .diagnoses_code:hover {
   background-color: rgb(172, 172, 172);
+}
+.thin_border {
+  border: 0.5px solid rgb(192, 189, 189);
 }

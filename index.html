@@ -22,11 +22,11 @@
           <div class="sidebar_child logo">
             <img src="/logo.svg" alt="" class="logo" />
           </div>
-          <div class="sidebar_child calender">
+   <div class="sidebar_child calendar"  onclick="showSelectedContainer('child_of_calendar','child_of_patients','child_of_reports','child_of_settings')">
             <div class="sidebar_icon"><i class="fa-solid fa-calendar-days bg_onClick"></i></div>
             <p>Calender</p>
           </div>
-          <div class="sidebar_child patients">
+          <div class="sidebar_child patients"  onclick="showSelectedContainer('child_of_patients','child_of_calendar','child_of_reports','child_of_settings')">
             <div class="sidebar_icon bg_brand"><i class="fa-solid fa-users bg_onClick"></i></div>
             <p>Patients</p>
           </div>
@@ -58,15 +58,15 @@
             <p class="account_name">Test P.</p>
           </div>
           <div class="nav_menus flex_row_start">
-            <div class="nav_menu flex_center active_nav_menu">
+            <div class="nav_menu flex_center active_nav_menu" onclick="showSelectedContainer('child_of_history','child_of_invoices','child_of_estimates')">
               <p>History</p>
               <span>1</span>
             </div>
-            <div class="nav_menu flex_center">
+            <div class="nav_menu flex_center" onclick="showSelectedContainer('child_of_invoices','child_of_history','child_of_estimates')">
               <p>Invocies</p>
               <span>0</span>
             </div>
-            <div class="nav_menu flex_center">
+            <div class="nav_menu flex_center" onclick="showSelectedContainer('child_of_estimates','child_of_history','child_of_invoices')">
               <p>Estimates</p>
               <span>0</span>
             </div>
@@ -88,7 +88,8 @@
           </div>
         </div>
         <!-- content -->
-        <div class="container">
+        <div id="child_of_patients" class="w-full h-full">
+          <div class="container">
           <!--  first column in container -->
           <div class="first_column">
             <div class="w-full accounts">
@@ -199,9 +200,10 @@
             </div>
           </div>
           <!--  second column in container -->
-          <div class="second_column">
-            <div class="newAppo pointer" ><p>New Appo...</p></div>
-            <div class="second_column_serial">
+          <div class="flex justify-start items-start w-full h-full" id="child_of_history">
+          <div class="second_column min-h-screen p-4">
+            <div class="newAppo pointer my-2" ><p>New Appo...</p></div>
+            <div class="second_column_serial shadow">
               <div class="serial_child active active_onClick">
                 <span>A</span><span>1</span>
               </div>
@@ -212,50 +214,53 @@
               <i class="fa-solid fa-user icon"></i> <span>John D.</span>
             </div>
           </div>
-          <!-- last column in container -->
-          <div class="third_column">
+                  <!-- last column in container -->
+          <div class="third_column w-full h-full" id="">
             <div class="row_one_and_two">
               <div class="third_column_row1">
-                <span class="position_pill">1</span>
-                <div class="active active_onClick" onclick="toggleChild('child_of_diagnoses')"><p>Dental chart</p></div>
-                <div class='active_onClick'><p>Clinical Notes</p></div>
-                <div class='active_onClick'><p>Perio Chart</p></div>
+                <div class="active active_onClick"  ><p>Dental chart</p></div>
+                <div class='active_onClick'  onclick="showSelectedContainer('child_of_clinical_notes','child_of_perio_chart','child_of_dental_chart')"><p>Clinical Notes</p></div>
+                <div class="active_onClick" onclick="showSelectedContainer('child_of_perio_chart','child_of_clinical_notes','child_of_dental_chart')"><p>Perio Chart</p></div>
               </div>
               <div class="line"></div>
+
+              <!-- tab options for dental child -->
+                  <div id="child_of_dental_chart" >
               <div class="third_column_row2">
-                <span class="position_pill">3</span>
+               <div class="active active_onClick"  onclick=" showSelectedContainer('child_of_diagnoses', 'child_of_prophy','child_of_therapy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_ortho')">
+                <p>Diagnostic</p>
+                 </div>
 
-    <div class="active active_onClick" onclick="toggleChild('child_of_diagnoses'); hideOtherChildren('child_of_prophy', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_ortho')">
-      <p>Diagnostic</p>
-    </div>
-
-    <div class="active_onClick" onclick="toggleChild('child_of_prophy'); hideOtherChildren('child_of_diagnoses', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_ortho')">
+    <div class="active_onClick" onclick="showSelectedContainer('child_of_prophy','child_of_diagnoses', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_ortho')">
                   <p>Prophy/Aesthetic</p>
                 </div>
-                  <div class="active_onClick" onclick="toggleChild('child_of_therapy'); hideOtherChildren('child_of_diagnoses', 'child_of_prophy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_ortho')">
+                  <div class="active_onClick" onclick=" showSelectedContainer('child_of_therapy','child_of_diagnoses', 'child_of_prophy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_ortho')">
 
                   <p>Therapy</p>
                 </div>
-                  <div class="active_onClick" onclick="toggleChild('child_of_prosthodontics'); hideOtherChildren('child_of_diagnoses', 'child_of_therapy', 'child_of_prophy', 'child_of_surgery', 'child_of_ortho')">
+                  <div class="active_onClick" onclick=" showSelectedContainer('child_of_prosthodontics','child_of_diagnoses', 'child_of_therapy', 'child_of_prophy', 'child_of_surgery', 'child_of_ortho')">
 
                   <p>Prosthodontics</p>
                 </div>
-                  <div class="active_onClick" onclick="toggleChild('child_of_surgery'); hideOtherChildren('child_of_diagnoses', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_prophy', 'child_of_ortho')">
+                  <div class="active_onClick" onclick=" showSelectedContainer('child_of_surgery','child_of_diagnoses', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_prophy', 'child_of_ortho')">
 
                   <p>Surgery</p>
                 </div>
-                  <div class="active_onClick" onclick="toggleChild('child_of_ortho'); hideOtherChildren('child_of_diagnoses', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_prophy')">
+                  <div class="active_onClick" onclick=" showSelectedContainer('child_of_ortho','child_of_diagnoses', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_prophy')">
 
                   <p>Ortho</p>
                 </div>
               </div>
-            </div>
+              <!--content for dental chart -->
+    <!-- tab options for dental child -->
+    
 
-
-            <div class="child_of_diagnoses child-content default">
+         
+            <div>
+<!-- for diagnoses tab child -->
+            <div id="child_of_diagnoses">
           <div class="third_column_row34">
               <div class="third_column_rowx">
-                <div class="position_pill">2</div>
                 <div class="data">
                   <i class="fa-solid fa-tooth icon_dark_bg"></i>
                   <p>Missing</p>
@@ -291,7 +296,7 @@
                   <i class="fa-solid fa-angle-down"></i>
                 </div>
               </div>
-              <div class="third_column_rowy"  id="openDiagnosis">
+              <div class="third_column_rowy"  onclick="openModal('add_diagnoses')">
                 <div class="position_pill">4</div>
                 <div class="data pointer">
                   <i class="fa-solid fa-circle-plus icon"></i>
@@ -305,10 +310,10 @@
               <img src="/tooth.jpeg" class="tooth_img" alt="" />
             </div>
             </div>
-               <div class="child_of_prophy child-content">
- <div class="third_column_row34">
+            <!-- for prophy  -->
+               <div id="child_of_prophy" class="hidden">
+               <div class="third_column_row34">
               <div class="third_column_rowx">
-                <div class="position_pill">2</div>
                 <div class="data ">
                   <i class="fa-solid fa-tooth icon_red_bg"></i>
                   <p>Planned</p>
@@ -335,7 +340,7 @@
                 </div>
                
               </div>
-              <div class="third_column_rowy"  id="openProcedures">
+              <div class="third_column_rowy"  onclick="openModal('add_procedures')">
                 <div class="position_pill">4</div>
                 <div class="data pointer">
                   <i class="fa-solid fa-circle-plus icon"></i>
@@ -349,25 +354,24 @@
               <img src="/pophy.jpg" class="tooth_img" alt="" />
             </div>
             </div>
-                 <div class="child_of_therapy child-content">
- <P class="empty">Empty</P>
+            <!-- for therapy -->
+                 <div id="child_of_therapy" class=" empty hidden">
+ <P >Empty</P>
           
             </div>
-                    <div class="child_of_prosthodontics child-content">
- <P class="empty">Empty</P>
+                    <div id="child_of_prosthodontics" class=" hidden empty">
+ <P >Empty</P>
           
             </div>
-                                <div class="child_of_surgery child-content">
- <P class="empty">Empty</P>
+                                <div id="child_of_surgery" class=" hidden empty">
+ <P >Empty</P>
           
             </div>
-                                            <div class="child_of_ortho child-content">
- <P class="empty">Empty</P>
+                                            <div id="child_of_ortho" class=" hidden empty">
+ <P >Empty</P>
           
             </div>
-           
-         
-            <!-- data status -->
+               <!-- data status -->
             <div class="third_column_row6">
               <div class="item flex_center active active_onClick">
                 <p>All Procedures</p>
@@ -408,8 +412,355 @@
               </table>
               <div class="no_data">No Data</div>
             </div>
-          </div>
+           </div>
+            </div>
+
+      
+             
+             
+                            <!-- tab options for clinical notes child -->
+                            <div id="child_of_clinical_notes" class="hidden">
+        <div class="flex_row_start my-2 thin_border w-max">
+             <div class="active active_onClick p-2" >
+              <p>All Notes <span class = 'ml-2'>2</span></p>
+                 </div>
+                   <div class="active_onClick w-max p-2">
+                  <p>Clinical Exams <span class = 'ml-2'>2</span></p>
+                </div>
+                    <!--content for clinical notes -->
+                 </div>
+                 
+<div class="" id="child_of_all_notes">
+    <form onsubmit="createNotes(event)">
+      <input type="textarea" placeholder="Write notes" class="text-gray-400 p-2 my-4 w-full h-10 border-none">
+      <div class="flex_row_start space-x-2">
+        <input type="submit" value="Create Notes" class="button"> 
+        <div class="shadow pointer flex_row_center py-1 px-4" onclick="openModal('add_template')">
+          <span class="mr-4"><icon class="fa fa-plus"></icon></span>
+          <p>Use Template</p>
         </div>
+      </div>
+    </form>
+<div id="notesContainer">
+    <div class="flex_row_start space-x-2 my-2 max-w-[300px]" >
+   <div class="account_circle">JD</div>
+   <div>
+    <div class="flex_row_start space-x-2 notes">
+ <p class="text_brand text-xl">
+      John D
+    </p>
+    <p class="gray_text"> 
+      13 Apr, 2023
+    </p>
+    </div>
+   
+    <p>
+      A Funcitonal Evaluation of the patient's TMJ shows the following :
+      Motion/Deviation: Moderate
+      Subluxation?crepitius:Moderate
+    </p>
+   </div>
+</div>
+</div>
+
+</div></div>
+                        <!--tab options for  perio chart child -->
+                        <div id="child_of_perio_chart" class="hidden">
+      <div class=" text-center active p-2 w-full my-2">
+                 <p>Apr13,20221:30 AM</p>
+              </div>
+              <!--content for perio chart-->
+<div class="" >
+  <div class="flex_row_center space-x-4">
+    <div class="flex_row_center space-x-4"><input type="radio" name="teeth" id="topteeth"><label for="topteeth">Top Teeth</label></div>
+    <div class="flex_row_center space-x-4"><input type="radio" name="teeth" id="bottomteeth"><label for="bottomteeth">Bottom Teeth</label></div>
+  </div>
+  <img src="/Perio Chart.jpg" alt="">
+</div>
+            </div>
+          
+                        </div>
+          </div>
+          </div>
+       <div class="flex justify-start items-start w-full h-full hidden" id="child_of_invoices">
+  <div class="second_column h-screen p-4 border_thin" >
+
+            <div class="newAppo pointer my-2" onclick="openModal('add_invoice')"><p>New Invoices</p></div>
+            <div class="second_column_serial shadow">
+              <div class="serial_child active active_onClick">
+                <span>Active</span><span>1</span>
+              </div>
+              <div class="serial_child active_onClick"><span>Cancel</span><span>D</span></div>
+            </div>
+            <div class="bg-white my-2">
+              <div class="text-red-500">
+                <i class="fa-solid fa-dollar text-red-500 icon"></i> $25.5
+              </div>
+              <p>Apr13,20221:30 AM</p>
+               <span class = 'gray_text'>invoices #1</span>
+            </div>
+          </div>
+          <div class=" w-full">
+<div class="flex border-b-[.5px] border-gray-300 justify-between items-center p-2 w-full bg-white">
+  <div>
+    <p>Invoice #1</p>
+    <p class="text-red-500">Remained to pay .$6.25</p>
+  </div>
+  <div class="flex_row_center space-x-2 w-max">
+<div class="newAppo pointer" onclick="openModal('add_payment')"> Add Payment</div>
+<div class="newAppo">...</div>
+  </div>
+</div>
+<div class="flex justify-start items-center shadwo-md p-2 bg-white">
+  <p><span class=" gray_text mx-2 border-l-[1px] border-gray-700 pl-2">Created:</span> Apr 29,2022</p>  <p><span class=" gray_text mx-2 border-l-[1px] border-gray-700 pl-2">Created by:</span> John D</p>  <p><span class=" gray_text mx-2 border-l-[1px] border-gray-700 pl-2">Pay Unit:</span> Apr 29,2022</p>  <p><span class=" gray_text mx-2 border-l-[1px] border-gray-700 pl-2">Teeth: <p><span class="text-gray">Unassigned</p> 
+</div>
+    <!-- data table -->
+            <div class="invoice_column_table">
+              <table class="invoice_column_table_header">
+                <thead>
+                  <tr>
+                  
+                    <th>Provider</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                   <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                  <select name="" id=""><option>Payments</option></select>
+                    </td>
+                    <td></td>
+                    <td>$15.00</td>
+                    <td></td>
+                  </tr>
+                   <tr>
+                    <td>
+                John D
+                    </td>
+                    <td>Apr 29,2022 1:08 PM</td>
+                    <td>$15.00</td>
+                    <td></td>
+                  </tr>
+                    <tr>
+                   
+                    <td>Apr 29,2022 1:08 PM</td>
+                     <td></td>
+                    <td>$15.00</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+       </div>
+       <!-- estimates contianer -->
+           <div class="flex justify-start items-start w-full h-full hidden" id="child_of_estimates">
+           <div class="second_column h-screen p-4 border_thin" >
+
+            <div class="newAppo pointer my-2" onclick="openModal('add_estimates')"><p>New Estimates</p></div>
+           
+            <div class="my-2 p-2 bg-gray-100">
+              <div class="flex_row_start">
+   <i class="fa-solid fa-user text-red-500 icon "></i> 
+              
+              <p>Apr13,20221:30 AM</p>
+              </div>
+             
+               <p class = 'gray_text py-2'>$25.5</p>
+            </div>
+          </div>
+             <!-- tab options for dental child -->
+                  <div >
+                    <div class="w-full flex justify-between items-center bg-white p-2">
+                      <div>
+                        <p>Estimates(1)</p>
+                        <p class="gray_text">Pending</p>
+                      </div>
+                      <div class="flex_row_start space-x-2">
+                        <p>Discount</p>
+                        <div class="btn">15%</div>
+                        <div class="btn flex_row_start space-x-2">
+<select name="status" id=""> <option value="Set Status">set Status</option> <icon class="fa fa-arrow"/></select>
+                        </div>
+<div class="btn">...</div>
+                      </div>
+                    </div>
+              <div class="third_column_row2">
+             
+    <div class="active_onClick active" onclick="showSelectedContainer('child_of_prophy','child_of_diagnoses', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_ortho')">
+                  <p>Prophy/Aesthetic</p>
+                </div>
+                  <div class="active_onClick" onclick=" showSelectedContainer('child_of_therapy','child_of_diagnoses', 'child_of_prophy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_ortho')">
+
+                  <p>Therapy</p>
+                </div>
+                  <div class="active_onClick" onclick=" showSelectedContainer('child_of_prosthodontics','child_of_diagnoses', 'child_of_therapy', 'child_of_prophy', 'child_of_surgery', 'child_of_ortho')">
+
+                  <p>Prosthodontics</p>
+                </div>
+                  <div class="active_onClick" onclick=" showSelectedContainer('child_of_surgery','child_of_diagnoses', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_prophy', 'child_of_ortho')">
+
+                  <p>Surgery</p>
+                </div>
+                  <div class="active_onClick" onclick=" showSelectedContainer('child_of_ortho','child_of_diagnoses', 'child_of_therapy', 'child_of_prosthodontics', 'child_of_surgery', 'child_of_prophy')">
+
+                  <p>Ortho</p>
+                </div>
+              </div>
+              <!--content for dental chart -->
+    <!-- tab options for dental child -->
+    
+
+         
+            <div>
+<!-- for diagnoses tab child -->
+          
+            <!-- for prophy  -->
+               <div id="child_of_prophy" >
+               <div class="third_column_row34">
+              <div class="third_column_rowx">
+                <div class="data ">
+                  <i class="fa-solid fa-tooth icon_red_bg"></i>
+                  <p>Planned</p>
+                </div>
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_red_bg"></i>
+                  <p>Cleanned</p>
+                </div>
+
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_red_bg"></i>
+                  <p>Fluoride</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_red_bg"></i>
+                  <p>Sealant</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="data">
+                  <i class="fa-solid fa-tooth icon_red_bg"></i>
+                  <p>whitening</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+               
+              </div>
+              <div class="third_column_rowy"  onclick="openModal('add_procedures')">
+                <div class="position_pill">4</div>
+                <div class="data pointer">
+                  <i class="fa-solid fa-circle-plus icon"></i>
+                  <p>All Procedures</p>
+                  <i class="fa-solid fa-angle-down"></i>
+                </div>
+              </div>
+            </div>
+               <!-- tooth image -->
+            <div class="third_column_row5">
+              <img src="/pophy.jpg" class="tooth_img" alt="" />
+            </div>
+            </div>
+            <!-- for therapy -->
+                 <div id="child_of_therapy" class=" empty hidden">
+ <P >Empty</P>
+          
+            </div>
+                    <div id="child_of_prosthodontics" class=" hidden empty">
+ <P >Empty</P>
+          
+            </div>
+                                <div id="child_of_surgery" class=" hidden empty">
+ <P >Empty</P>
+          
+            </div>
+                                            <div id="child_of_ortho" class=" hidden empty">
+ <P >Empty</P>
+          
+            </div>
+               <!-- data status -->
+            <div class="third_column_row6">
+              <div class="item flex_center active active_onClick">
+                <p>All Procedures</p>
+                <span>0</span>
+              </div>
+              <div class="item flex_center active_onClick">
+                <p>Existing</p>
+                <span>0</span>
+              </div>
+              <div class="item flex_center active_onClick">
+                <p>Planned</p>
+                <span class="bg_red">0</span>
+              </div>
+              <div class="item flex_center active_onClick">
+                <p>Completed</p>
+                <span class="bg_green">0</span>
+              </div>
+              <div class="item flex_center active_onClick">
+                <p>Diagnoses</p>
+                <span>0</span>
+              </div>
+            </div>
+            <!-- data table -->
+            <div class="third_column_table">
+              <table class="third_column_table_header">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Code</th>
+                    <th>Teeth</th>
+                    <th>Procedure</th>
+                    <th>Qty</th>
+                    <th>Fee</th>
+                    <th></th>
+                  </tr>
+                </thead>
+              </table>
+              <div class="no_data">No Data</div>
+            </div>
+           </div>
+            </div>
+
+           </div>
+          
+  
+        </div>
+        <!-- calender container -->
+           <div id="child_of_calendar" class="hidden">
+            <div class="container">
+              <div class="grid grid-cols-5">
+              <img src="/calender.jpg" alt="calender" class = 'h-full object-fit col-span-4'>
+           
+   <!--  second column in container -->
+          <div class="w-full bg-white p-2">
+            <div class="shadow pointer flex_row_center py-2" onclick="openModal('add_reqord')" ><span class="mr-4"><icon class="fa fa-plus"></icon></span><p>New Reqord</p></div>
+              <input class="p-2 my-2 border-none outline-none shadow w-full" type="text" placeholder="Search">
+            <div class="second_column_serial mb-2">
+              <div class="serial_child active active_onClick">
+                <span><icon class = 'fa fa-user'></icon></span><span>2</span>
+              </div>
+              <div class="serial_child active_onClick"><span><icon class='fa fa-envelope'></icon></span><span></span></div>
+            </div>
+            <div class="second_column_date bg-white text-gray-600">
+              <div class="border-b-[.5px] py-2">
+                   <p>Test P.| 30 mins</p>
+              <i class="fa-solid fa-user icon"></i> <span>All providers</span>
+
+              </div>
+            
+               <div class="border-b-[.5px] py-2">
+            <p>Test P | 30 mins</p>
+              <i class="fa-solid fa-user icon"></i> <span>John D.</span>
+            </div>
+            </div>
+              
+          </div>
+              </div>
+            </div>
+           </div>
+          </div>
       </div>
     </div>
 
@@ -418,7 +769,7 @@
     <div class = 'w-full  modal' id="add_diagnoses">
       <div class="flex justify-between items-center border-b-[.5px] p-2">
          <h3 class="title  border-gray-300">Add Diagnoses</h3> 
-         <icon class="fa fa-close text-xl pointer" id="closeModal"/>
+         <icon class="fa fa-close text-xl pointer" onclick="closeModal('add_diagnoses')"/>
       </div>
 
    <div class="modal_container">
@@ -433,7 +784,7 @@
               <div class=" px-4 py-2">
                <icon class="fa fa-search" />
               </div> 
-               <input class="p-2" type="text" placeholder="Search">
+            <input class="p-2 border-none outline-none" type="text" placeholder="Search">
             
             </div>
        
@@ -477,7 +828,7 @@
 <div class = 'w-full  modal' id="add_procedures">
       <div class="flex justify-between items-center border-b-[.5px] p-2">
          <h3 class="title  border-gray-300">Add Procedures/Therapy/Restoration</h3> 
-         <icon class="fa fa-close text-xl pointer" id="closeProcedures"/>
+         <icon class="fa fa-close text-xl pointer" onclick="closeModal('add_procedures')"/>
       </div>
 
    <div class="modal_container">
@@ -492,9 +843,8 @@
               <div class=" px-4 py-2">
                <icon class="fa fa-search" />
               </div> 
-               <input class="p-2" type="text" placeholder="Search">
+            <input class="p-2 border-none outline-none" type="text" placeholder="Search">
             </div>
-       
    </div> 
         <form action="">
               <div class="py-2 border-b-[.5px] shadow-b-md flex_row_start space-x-2">
@@ -541,6 +891,216 @@
 
             </form>
    </div>
+
+   </div>
+   <!-- add new reqord -->
+<div class = 'w-full  modal' id="add_reqord">
+      <div class="flex justify-between items-center border-b-[.5px] p-2">
+         <h3 class="title  border-gray-300">New Reqord</h3> 
+         <icon class="fa fa-close text-xl pointer" onclick="closeModal('add_reqord')"/>
+      </div>
+
+   <div class="modal_container w-full">
+
+
+        <form action="" class="w-full">
+          <div class="flex_row_start w-full">
+                <label for="duration" class="w-28">Duration:</label>
+  <input type="range" id="duration" name="duration" min="0" max="100" step="1" value="0" class="w-full">
+</div>
+                       <div class="flex_row_start my-2">
+              <label for="patient" class="w-28">Patient</label>
+              <select id="patient" name="patient" class="w-full p-1 shadow">
+                <option value="" class="text-gray-500">Select</option>
+                <option value="a">A</option>
+                <option value="b">B</option>
+              </select>
+             </div>
+             <div class="flex_row_start my-2">
+              <label for="providers" class="w-28">Providers</label>
+              <select id="providers" name="providers" class="w-full p-1 shadow">
+  <option value="" class="text-gray-500">Select</option>
+                <option value="a">A</option>
+                <option value="b">B</option>
+              </select>
+             </div>
+            
+              <div class=" py-4">
+
+                <input type="submit" class="button w-full" value="Create Diagnosis - 2">
+              </div>
+
+            </form>
+   </div>
+
+   </div>
+   <!-- add invoice modal -->
+    <div class = 'w-full modal' id="add_invoice">
+      <div class="flex justify-between items-center border-b-[.5px] p-2">
+         <h3 class="title  border-gray-300">Add Invoice</h3> 
+         <icon class="fa fa-close text-xl pointer" onclick="closeModal('add_invoice')"/>
+      </div>
+
+   <div class="modal_container">
+  <div class="flex justify-between w-full border-b-[.5px] border-gray-300 py-2">
+ <div class="flex_row_start  w-max h-max space-x-2">
+              <div class=" bg-gray-100 px-4 py-1 h-10 w-full">
+
+                <p class="gray_text">Code</p> 
+                <p class="gray_text">...</p>
+              </div>
+              <div class="bg-gray-100 px-4 py-1 h-10"><p class="gray_text">Discount</p>
+              <select class="bg-gray-100"><option value="Selected-1">
+                Selected-1
+              </option></select></div>
+                 <div class=" bg-gray-100 px-4 py-1 h-10 w-full">
+
+                <p class="gray_text">Tax</p> 
+                <p>1%</p>
+              </div>
+            </div>
+               <div class="flex_row_start space-x-2 ">
+              
+              <div class="bg-gray-100 px-4 py-1 h-10 flex_row_center shadow w-max rounded-md">
+               
+                <label for=""><p class="gray_text">Create Date</p>
+              </label>
+<input class="p-2 border-none outline-none bg-gray-100 w-40" type="datetime-local" placeholder="">
+              </div>
+                     <div class="bg-gray-100 px-4 py-1 h-10 flex_row_center shadow w-max rounded-md">
+               
+                <label for=""><p class="gray_text">Pay Until</p>
+              </label>
+<input class="p-2 border-none outline-none bg-gray-100 w-40" type="datetime-local" placeholder="">
+              </div>
+            
+            
+            </div>
+       
+   </div> 
+       <form action="">
+            
+              <div class="scroll_container">
+             
+                 <div class="invoice_column_table">
+              <table class="invoice_column_table_header">
+                <thead>
+                  <tr>
+                   
+                    <th>Teeth</th>
+                    <th>Name</th>
+                    <th>12</th>
+                    <th>1222</th>
+                    <th>Subtotal</th>
+                   <th><icon class="fa fa-trash"/></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                
+                    </td>
+                    <td>test</td>
+                       <th>12</th>
+                    <th>1222</th>
+                    <td>$15.00</td>
+                     <th><icon class="fa fa-trash"/></th>
+                  </tr>
+                   <tr>
+                    <td>
+                John D
+                    </td>
+                      <td>test</td>
+                       <th>12</th>
+                    <th>1222</th>
+                    <td>$15.00</td>
+                       <th><icon class="fa fa-trash"/></th>
+                  </tr>
+                    <tr>
+                   <td></td>
+                    <td>test</td>
+                       <th>12</th>
+                    <th>1222</th>
+                    <td>$15.00</td>
+                       <th><icon class="fa fa-trash"/></th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+              </div>
+              <div class=" py-4">
+            <div class="flex_row_center space-x-2 py-1">
+              <p>Subtotal:$21.00</p> <p>.Discount: $2.75</p>
+            </div>
+                <input type="submit" class="button w-full" value="Create Invoice - $21">
+              </div>
+
+            </form>
+   </div>
+ 
+
+   </div>
+     <!-- add payment modal -->
+    <div class = 'w-full modal' id="add_payment">
+      <div class="flex justify-between items-center border-b-[.5px] p-2">
+         <h3 class="title  border-gray-300">Add Payment</h3> 
+         <icon class="fa fa-close text-xl pointer" onclick="closeModal('add_payment')"/>
+      </div>
+
+   <div class="modal_container">
+ <div class="w-full h-max">
+  <div class="flex justify-around items-center w-full border-[1px] border-gray-300">
+                <div class="active active_onClick w-full text-center py-2"><p>Pay Debts</p></div>
+                <div class='active_onClick w-full text-center py-2'><p>Replenish</p></div>
+                <div class="active_onClick w-full text-center py-2"><p>widrawal</p></div>
+                <div class="active_onClick w-full text-center py-2"><p>Transfer</p></div>
+              </div>
+                <div class=" flex justify-around items-center w-full py-2">
+                <div class="mr-2 shadow bg-gray-100 w-full text-center py-2"  ><p>Pay Debts</p>
+                <input type="radio" name="cash" id=""></div>
+                <div class='mr-2 shadow bg-gray-100 w-full text-center py-2'><p>Replenish</p>
+                <input type="radio" name="cash" id=""></div>
+                <div class="mr-2 shadow bg-gray-100 w-full text-center py-2"><p>widrawal</p>
+                  <input type="radio" name="cash" id="">
+                </div>
+                <div class="shadow bg-gray-100 w-full text-center py-2"><p>Transfer</p>
+                <input type="radio" name="cash" id=""></div>
+              </div>
+   </div> 
+       <form action="">
+             
+              <div class="scroll_container">
+           <div class="flex_row_start w-full">
+
+          
+                      <label for="amount" class="w-28">Amount:</label>
+  <input type="text" id="amount" name="amount" placeholder = 'Amount' class="w-full gray_text">
+</div> </div>
+                       <div class="flex_row_start my-2">
+              <label for="patient" class="w-28">Date Time</label>
+              <input type="datetime-local" name="" class= "w-full">
+             </div>
+             <div class="flex_row_start my-2">
+              <label for="providers" class="w-28">Group</label>
+              <select id="providers" name="providers" class="w-full p-1 shadow" aria-placeholder="select">
+  <option value="" class="gray_text">Select</option>
+                <option value="a">A</option>
+                <option value="b">B</option>
+              </select>
+             </div>
+             <div class="flex_row_start my-2">
+            <input type="radio" name="" id="balance"> <label for="balance">New patient balance $120</label>
+             </div>
+              </div>
+              <div class=" py-4">
+
+                <input type="submit" class="button w-full" value="Replenish">
+              </div>
+
+            </form>
+   </div>
+ 
 
    </div>
     </div>

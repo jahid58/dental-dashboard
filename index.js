@@ -151,3 +151,40 @@ firstColumnItems.forEach(function(item) {
       // Clear the input field
       notesInput.value = "";
     }
+ function createComment(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get the input value (assuming you have an input element with id 'commentsInput')
+      var commentsInput = document.querySelector('#child_of_all_comments input[type="textarea"]');
+      var commentText = commentsInput.value;
+
+      // Get the current date (you may want to use a more sophisticated date format)
+      var currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+      // Get the username (replace this with the actual username)
+      var username = "John D";
+
+      // Create new elements for the comment
+      var commentsContainer = document.getElementById('commentsContainer');
+      var newComment = document.createElement('div');
+      newComment.className = 'flex_row_start space-x-2 my-2 max-w-[300px]';
+
+      // Populate the new elements with username, date, and comment text
+      newComment.innerHTML = `
+        <div class="account_circle">${username}</div>
+        <div>
+          <div class="flex_row_start space-x-2 comments">
+            <p class="text_brand text-xl">${username}</p>
+            <p class="gray_text">${currentDate}</p>
+          </div>
+          <p>${commentText}</p>
+        </div>
+      `;
+
+      // Append the new comment to the comments container
+      commentsContainer.appendChild(newComment);
+
+      // Clear the input field
+      commentsInput.value = "";
+    }
+

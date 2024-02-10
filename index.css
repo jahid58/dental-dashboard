@@ -107,7 +107,7 @@ p {
 .button {
   background-color: rgb(24, 194, 24) !important;
   color: white;
-  padding: 0.25rem 0.5rem;
+  padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
 }

@@ -58,30 +58,30 @@
             <p class="account_name">Test P.</p>
           </div>
           <div class="nav_menus flex_row_start">
-            <div class="nav_menu flex_center active_nav_menu" onclick="showSelectedContainer('child_of_history','child_of_invoices','child_of_estimates')">
+            <div class="nav_menu flex_center active_nav_menu" onclick="showSelectedContainer('child_of_history','child_of_invoices','child_of_estimates','child_of_questionnaire','child_of_task','child_of_document','child_of_storage')">
               <p>History</p>
               <span>1</span>
             </div>
-            <div class="nav_menu flex_center" onclick="showSelectedContainer('child_of_invoices','child_of_history','child_of_estimates')">
+            <div class="nav_menu flex_center" onclick="showSelectedContainer('child_of_invoices','child_of_history','child_of_estimates','child_of_questionnaire','child_of_task','child_of_document','child_of_storage')">
               <p>Invocies</p>
               <span>0</span>
             </div>
-            <div class="nav_menu flex_center" onclick="showSelectedContainer('child_of_estimates','child_of_history','child_of_invoices')">
+            <div class="nav_menu flex_center" onclick="showSelectedContainer('child_of_estimates','child_of_history','child_of_invoices','child_of_questionnaire','child_of_task','child_of_document','child_of_storage')">
               <p>Estimates</p>
               <span>0</span>
             </div>
-            <div class="nav_menu flex_center">
+            <div class="nav_menu flex_center"  onclick="showSelectedContainer('child_of_questionnaire','child_of_estimates','child_of_history','child_of_invoices','child_of_task','child_of_document','child_of_storage')">
               <p>Questionnaire</p>
             </div>
-            <div class="nav_menu flex_center">
+            <div class="nav_menu flex_center"  onclick="showSelectedContainer('child_of_task','child_of_estimates','child_of_history','child_of_invoices','child_of_questionnaire','child_of_document','child_of_storage')">
               <p>Task</p>
               <span>2</span>
             </div>
-            <div class="nav_menu flex_center">
+            <div class="nav_menu flex_center" onclick="showSelectedContainer( 'child_of_document','child_of_task','child_of_estimates','child_of_history','child_of_invoices','child_of_questionnaire','child_of_storage')">
               <p>Documents</p>
               <span>1</span>
             </div>
-            <div class="nav_menu flex_center">
+            <div class="nav_menu flex_center" onclick="showSelectedContainer('child_of_storage','child_of_task','child_of_estimates','child_of_history','child_of_invoices','child_of_questionnaire','child_of_document')">
               <p>Storage</p>
               <span>2</span>
             </div>
@@ -463,7 +463,8 @@
 </div>
 </div>
 
-</div></div>
+</div>
+</div>
                         <!--tab options for  perio chart child -->
                         <div id="child_of_perio_chart" class="hidden">
       <div class=" text-center active p-2 w-full my-2">
@@ -482,6 +483,7 @@
                         </div>
           </div>
           </div>
+          <!-- child of invoice -->
        <div class="flex justify-start items-start w-full h-full hidden" id="child_of_invoices">
   <div class="second_column h-screen p-4 border_thin" >
 
@@ -724,7 +726,104 @@
             </div>
 
            </div>
+           <!-- questionnaire contianer -->
+           <div class="flex justify-start items-start w-full h-full hidden" id="child_of_questionnaire">
+         
+            <div class="bg-white grid grid-cols-2 gap-4 w-full h-full p-4">
+              <div class="w-full">
+
+           
+              <div class="border-b-[.5px] w-full py-4 flex justify-between" ><p>Dental</p> <div class="btn w-28 flex_row_center space-x-2"> <label for="">Edit Mode</label><input type="checkbox" name="" id=""></div></div>
+              <div class="border-b-[.5px] w-full py-4" ><p>1. Do you have any concern with your teeth</p> <p class="gray_text">N/A</p></div>
+                            <div class="border-b-[.5px] w-full py-4" ><p>1. Do you have any concern with your teeth</p> <p class="gray_text">N/A</p></div>              <div class="border-b-[.5px] w-full py-4" ><p>1. Do you have any concern with your teeth</p> <p class="gray_text">N/A</p></div>              <div class="border-b-[.5px] w-full py-4" ><p>1. Do you have any concern with your teeth</p> <p class="gray_text">N/A</p></div>
+                </div>
+           
+            <div>
+ <div class="w-full">
+
+           
+             <div class="border-b-[.5px] w-full py-4 flex justify-between" ><p>Medical</p> <div class="btn w-28 flex_row_center space-x-2"> <label for="">Edit Mode</label><input type="checkbox" name="" id=""></div></div>
+              <div class="border-b-[.5px] w-full py-4" ><p>1. Do you have any concern with your teeth</p> <p class="gray_text">N/A</p></div>
+                            <div class="border-b-[.5px] w-full py-4" ><p>1. Do you have any concern with your teeth</p> <p class="gray_text">N/A</p></div>              <div class="border-b-[.5px] w-full py-4" ><p>1. Do you have any concern with your teeth</p> <p class="gray_text">N/A</p></div>              <div class="border-b-[.5px] w-full py-4" ><p>1. Do you have any concern with your teeth</p> <p class="gray_text">N/A</p></div>
+                </div> 
+            </div>
           
+            </div>
+           </div>  
+             <!-- task contianer -->
+         
+           <div class="flex justify-start items-start w-full h-full hidden" id="child_of_task">
+           <div class="second_column h-screen p-4 border_thin" >
+
+            <div class="newAppo pointer my-2" onclick="openModal('add_task')"><p>New task</p></div>
+           
+            <div class="my-2 p-2 bg-gray-100">
+              <div class="flex_row_start">
+   <i class="fa-solid fa-user text-red-500 icon "></i> 
+              
+              <p>Apr13,20221:30 AM</p>
+              </div>
+             
+               <p class = 'gray_text py-2'>$25.5</p>
+            </div>
+          </div>
+             <!-- tab options for dental child -->
+                  <div class="w-full">
+                    <div class="w-full flex justify-between items-center bg-white p-2">
+                      <div>
+                        <p>Follow up(1)</p>
+                        <p class="text-red-500">Expired . Apr 2022</p>
+                      </div>
+                      <div class="flex_row_start space-x-2">
+                     
+                        <div class="btn flex_row_start space-x-2">
+<select name="status" id=""> <option value="Set Status">In Queue</option> <icon class="fa fa-arrow"/></select>
+                        </div>
+<div class="btn">...</div>
+                      </div>
+                    </div>
+             
+
+<div class="flex justify-start items-center shadwo-md p-2 bg-white">
+  <p><span class=" gray_text mx-2 border-l-[1px] border-gray-700 pl-2">Date:</span> Apr 29,2022</p>  <p><span class=" gray_text mx-2 border-l-[1px] border-gray-700 pl-2">Assigned to: <p><span class="text-gray">John D</p>  <p><span class=" gray_text mx-2 border-l-[1px] border-gray-700 pl-2">Created:</span> Apr 29,2022</p>  <p><span class=" gray_text mx-2 border-l-[1px] border-gray-700 pl-2">Created by:</span> John D</p> 
+</div>
+<div class="" id="child_of_all_comments">
+ 
+<div id="commentsContainer">
+    <div class="flex_row_start space-x-2 my-2 max-w-[300px]" >
+   <div class="account_circle">JD</div>
+   <div>
+    <div class="flex_row_start space-x-2 comments">
+ <p class="text_brand text-xl">
+      John D
+    </p>
+    <p class="gray_text"> 
+      13 Apr, 2023
+    </p>
+    </div>
+   
+    <p>
+      A Funcitonal Evaluation of the patient's TMJ shows the following :
+      Motion/Deviation: Moderate
+      Subluxation?crepitius:Moderate
+    </p>
+   </div>
+</div>
+</div>
+   <form onsubmit="createComment(event)" class="flex justify-between items-center bg-white space-x-4">
+      <input type="textarea" placeholder="write comments" class="text-gray-400 p-2 my-4 w-full h-10 border-none ">
+      <div class="flex_row_start space-x-2 ">
+        <input type="submit" value="Add comments" class="button"> 
+      </div>
+    </form>
+
+</div>
+         
+          
+            </div>
+
+           </div> 
+  
   
         </div>
         <!-- calender container -->

@@ -72,7 +72,7 @@
             <div class="account_circle">TP</div>
             <p class="account_name">Test P.</p>
           </div>
-          <div class="nav_menus flex_row_start">
+          <div class="nav_menus flex justify-end items_center">
             <div
               class="nav_menu flex_center active_nav_menu"
               onclick="showSelectedContainer('child_of_history','child_of_invoices','child_of_estimates','child_of_questionnaire','child_of_task','child_of_document','child_of_storage')"
@@ -124,8 +124,8 @@
           </div>
         </div>
         <!-- content -->
-        <div id="child_of_patients" class="w-full h-full">
-          <div class="container">
+        <div id="child_of_patients" class="w-full">
+          <div class="main_container">
             <!--  first column in container -->
             <div class="first_column">
               <div class="w-full accounts">
@@ -228,10 +228,10 @@
             </div>
             <!--  second column in container -->
             <div
-              class="flex justify-start items-start w-full h-full"
+              class="flex justify-start items-start w-full"
               id="child_of_history"
             >
-              <div class="second_column min-h-screen p-4">
+              <div class="second_column p-4">
                 <div class="newAppo pointer my-2"><p>New Appo...</p></div>
                 <div class="second_column_serial shadow">
                   <div class="serial_child active active_onClick">
@@ -563,10 +563,10 @@
             </div>
             <!-- child of invoice -->
             <div
-              class="flex justify-start items-start w-full h-full hidden"
+              class="flex justify-start items-start w-full hidden"
               id="child_of_invoices"
             >
-              <div class="second_column h-screen p-4 border_thin">
+              <div class="second_column p-4 border_thin">
                 <div
                   class="newAppo pointer my-2"
                   onclick="openModal('add_invoice')"
@@ -680,10 +680,10 @@
             </div>
             <!-- estimates contianer -->
             <div
-              class="flex justify-start items-start w-full h-full hidden"
+              class="flex justify-start items-start w-full hidden"
               id="child_of_estimates"
             >
-              <div class="second_column h-screen p-4 border_thin">
+              <div class="second_column p-4 border_thin">
                 <div
                   class="newAppo pointer my-2"
                   onclick="openModal('add_estimates')"
@@ -865,7 +865,7 @@
             </div>
             <!-- questionnaire contianer -->
             <div
-              class="flex justify-start items-start w-full h-full hidden"
+              class="flex justify-start items-start w-full hidden"
               id="child_of_questionnaire"
             >
               <div class="bg-white grid grid-cols-2 gap-4 w-full h-full p-4">
@@ -929,10 +929,10 @@
             <!-- task contianer -->
 
             <div
-              class="flex justify-start items-start w-full h-full hidden"
+              class="flex justify-start items-start w-full hidden"
               id="child_of_task"
             >
-              <div class="second_column h-screen p-4 border_thin">
+              <div class="second_column p-4 border_thin">
                 <div
                   class="newAppo pointer my-2"
                   onclick="openModal('add_task')"
@@ -1043,10 +1043,10 @@
             <!-- document contianer -->
 
             <div
-              class="flex justify-start items-start w-full h-full hidden"
+              class="flex justify-start items-start w-full hidden"
               id="child_of_document"
             >
-              <div class="second_column h-screen p-4 border_thin">
+              <div class="second_column p-4 border_thin">
                 <div
                   class="newAppo pointer my-2"
                   onclick="openModal('add_document')"
@@ -1133,7 +1133,7 @@
               </div>
             </div>
             <!-- storage container -->
-            <div class="w-full h-full hidden bg-white" id="child_of_storage">
+            <div class="w-full hidden bg-white" id="child_of_storage">
               <div class="flex_row_start bg-gray-100 space-x-4">
                 <div class="active active_onClick p-2">All Uploads</div>
                 <div class="active_onClick p-2">Periapical</div>
@@ -1153,7 +1153,7 @@
         </div>
         <!-- calender container -->
         <div id="child_of_calendar" class="hidden">
-          <div class="container">
+          <div class="main_container">
             <div class="grid grid-cols-5">
               <img
                 src="/calender.jpg"
@@ -1689,6 +1689,58 @@
               <input type="submit" class="button w-full" value="Replenish" />
             </div>
           </form>
+        </div>
+      </div>
+      <!-- add document modal -->
+      <div class="w-full modal" id="add_document">
+        <div class="flex justify-between items-center border-b-[.5px] p-2">
+          <h3 class="title border-gray-300">Add Document</h3>
+          <icon
+            class="fa fa-close text-xl pointer"
+            onclick="closeModal('add_document')"
+          />
+        </div>
+        <div class="btn w-ful p-2">Consent Dentures</div>
+
+        <div class="modal_container">
+          <button onclick="execCommand('bold')">
+            <i class="fas fa-bold icon-btn"></i>
+          </button>
+          <button onclick="execCommand('italic')">
+            <i class="fas fa-italic icon-btn"></i>
+          </button>
+          <button onclick="execCommand('underline')">
+            <i class="fas fa-underline icon-btn"></i>
+          </button>
+          <button onclick="execCommand('insertUnorderedList')">
+            <i class="fas fa-list-ul icon-btn"></i>
+          </button>
+          <button onclick="execCommand('insertOrderedList')">
+            <i class="fas fa-list-ol icon-btn"></i>
+          </button>
+          <button onclick="insertImage()">
+            <i class="fas fa-image icon-btn"></i>
+          </button>
+          <button onclick="createLink()">
+            <i class="fas fa-link icon-btn"></i>
+          </button>
+          <input
+            type="color"
+            id="colorPicker"
+            title="Text Color"
+            class="h-4 w-4"
+            onchange="changeColor(this.value)"
+          />
+          <label for="fontSize">Font Size:</label>
+          <select id="fontSize" onchange="changeFontSize(this.value)">
+            <option value="1">Small</option>
+            <option value="2">Normal</option>
+            <option value="3">Large</option>
+            <option value="4">X-Large</option>
+          </select>
+          <div id="editor" contenteditable="true">
+            <p>This is a rich text editor.</p>
+          </div>
         </div>
       </div>
     </div>

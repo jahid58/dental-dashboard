@@ -187,4 +187,29 @@ firstColumnItems.forEach(function(item) {
       // Clear the input field
       commentsInput.value = "";
     }
+    // rich text editor
+function execCommand(command) {
+      document.execCommand(command, false, null);
+    }
+
+    function insertImage() {
+      var imageUrl = prompt("Enter image URL:");
+      if (imageUrl) {
+        document.execCommand('insertImage', false, imageUrl);
+      }
+    }
+
+    function createLink() {
+      var url = prompt("Enter URL:");
+      if (url) {
+        document.execCommand('createLink', false, url);
+      }
+    }
+
+    function changeColor(color) {
+      document.execCommand('foreColor', false, color);
+    }
+       function changeFontSize(size) {
+      document.execCommand('fontSize', false, size);
+    }
 

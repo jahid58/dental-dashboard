@@ -127,7 +127,6 @@ p {
 .sidebar {
   position: relative;
   width: 70px;
-  height: 118vh;
   box-shadow: 1px 0 3px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -225,10 +224,11 @@ p {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 /* dashboard container */
-.container {
+.main_container {
   display: flex;
   position: relative;
   width: 100%;
+  height: 100%;
   background-color: var(--secondary-color);
 }
 /* first column seciton in container */
@@ -321,6 +321,7 @@ p {
 /* second column section */
 .second_column {
   width: 200px;
+  height: 100%;
   background-color: white;
   margin-right: 10px;
 }
@@ -651,4 +652,36 @@ table {
 }
 .thin_border {
   border: 0.5px solid rgb(192, 189, 189);
+}
+
+#editor {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 200px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.icon-btn {
+  padding: 5px;
+  cursor: pointer;
+}
+select {
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 14px;
+}
+@media (max-width: 600px) {
+  .second_column {
+    display: hidden; /* Change background color for smaller screens */
+  }
+
+  .first_column {
+    display: hidden;
+  }
 }
